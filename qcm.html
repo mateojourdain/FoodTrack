@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM</title>
+    <link rel="stylesheet" href="qcm.css">
+    <script src="qcm.js"></script>
+    <!-- Désactiver le comportement du navigateur mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="qcmForm">
+            <div class="question-block">
+                <p class="question-text">Utilisez-vous cette application dans le cadre de votre activité physique ?</p>
+                <div class="options">
+                    <button type="button" class="option" data-value="oui">Oui</button>
+                    <button type="button" class="option" data-value="non">Non</button>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-text">Suivez-vous un régime alimentaire particulier ?</p>
+                <div class="options">
+                    <button type="button" class="option" data-value="vegetarien">Végétarien</button>
+                    <button type="button" class="option" data-value="vegan">Vegan</button>
+                    <button type="button" class="option" data-value="sans-gluten">Sans gluten</button>
+                    <button type="button" class="option" data-value="sans-lactose">Sans lactose</button>
+                    <button type="button" class="option" data-value="autre">Non</button>
+                </div>
+            </div>
+            <div class="content-button">
+                <button type="submit" class="submit-button">Valider</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

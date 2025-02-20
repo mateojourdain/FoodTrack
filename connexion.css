@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+/* police d'ecriture de Apple */
+@font-face {
+    font-family: 'SF Pro';
+    src: url('fonts/SF-Pro-Display-Regular.otf') format('opentype');
+}
+
+
+.apple-login-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(400px, 90%);
+    height: min(500px, 90vh);
+    padding: clamp(50px, 8vw, 70px);
+    border-radius: 1rem;
+    background: #F2F2F7;
+    box-shadow: 28px 28px 57px #828282,
+        -28px -28px 57px #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#apple-login-button {
+    width: 100%;
+    max-width: 300px;
+    padding: clamp(10px, 3vw, 12px);
+    margin: 20px 0;
+    border: none;
+    text-decoration: none;
+    font-size: clamp(15px, 2.5vw, 17px);
+    border-radius: 0.75rem;
+    background: #E5E5EA;
+    color: #1C1C1E;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+}
+
+#apple-login-button:hover {
+    text-decoration: none;
+}
+
+.apple-login-text {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(18px, 3vw, 21px);
+    line-height: 1.4;
+    color: #1d1d1f;
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+    max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .apple-login-text {
+        color: #f5f5f7;
+    }
+
+    #apple-login-button {
+        background: #1d1d1f;
+        color: #f5f5f7;
+    }
+}
+
+/* Ajout du support pour l'orientation */
+@media screen and (orientation: landscape) and (max-height: 767px) {
+    .apple-login-button-container {
+        padding: 20px;
+    }
+    
+    .apple-login-text {
+        margin: 15px;
+    }
+}

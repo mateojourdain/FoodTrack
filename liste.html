@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste</title>
+    <link rel="stylesheet" href="liste.css">
+    <!-- Désactiver le comportement du navigateur mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="liste.js"></script>
+    <!-- lien pour les icones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="nav-bar">
+        <div class="nav-bar-content">
+            <div class="nav-bar-item active">
+                <a href="liste.html">
+                    <span class="material-icons">checklist</span>
+                </a>
+            </div>
+            <div class="nav-bar-item">
+                <a href="calendrier.html">
+                    <span class="material-icons">calendar_month</span>
+                </a>
+            </div>
+            <div class="nav-bar-item">
+                <a href="reglages.html">
+                    <span class="material-icons">settings</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- calendrier -->
+    <div class="container">
+        <header>
+            <h1 class="title">Votre liste de course</h1>
+            <div class="clear-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5 7H19M10 11V17M14 11V17M6 7L7 19C7 19.5304 7.21071 20.0391 7.58579 20.4142C7.96086 20.7893 8.46957 21 9 21H15C15.5304 21 16.0391 20.7893 16.4142 20.4142C16.7893 20.0391 17 19.5304 17 19L18 7M9 7V5C9 4.46957 9.21071 3.96086 9.58579 3.58579C9.96086 3.21071 10.4696 3 11 3H13C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V7"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </header>
+
+        <div id="liste-container">
+            <ul id="liste-items" class="liste-items">
+                <!-- Les éléments de la liste seront ajoutés ici avec des checkboxes -->
+            </ul>
+            <div class="input-container">
+                <input type="text" id="liste-input" class="liste-input" placeholder="Ajouter un aliment à acheter...">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
