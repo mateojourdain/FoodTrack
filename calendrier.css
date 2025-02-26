@@ -85,638 +85,91 @@ body {
     justify-content: center;
 }
 
-
-/* calendrier */
-/* conteneur calendrier */
+/* conteneur */
 .container {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-family: 'SF Pro', sans-serif;
-    width: 95%;
-    max-width: 400px;
-    height: calc(100vh - 60px - 55px);
-    margin: 10px auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* sous conteneur calendrier */
-.calendrier-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 30px);
-    overflow: hidden;
-    background-color: #ffffff;
-    margin-bottom: 0;
-}
-
-/* corps du calendrier */
-.calendrier {
-    width: 100%;
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 10px;
-}
-
-/* conteneur en-tete du calendrier avec fleche et mois */
-.calendrier-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-}
-
-/* titre du mois */
-.calendrier-header h2 {
-    font-size: 1.2rem;
-    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 600;
-    text-transform: capitalize;
-    color: #1c1c1e;
-    margin: 0;
-}
-
-/* bouton fleche dans entete */
-.calendrier-header button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #8E8E93;
-    padding: 5px 10px;
-}
-
-/* ligne de separation entre les jours de la semaine et les jours du mois sur le calendrier mensuel*/
-.jours-semaine {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #8E8E93;
-    margin-bottom: 10px;
-}
-
-/* jours de la semaine calendrier mensuel */
-.jours-semaine div {
-    font-weight: 500;
-    color: #8E8E93;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-/* conteneur jours du mois calendrier mensuel */
-#calendrier-jours {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: #ffffff;
-}
-
-/* jours du mois calendrier mensuel */
-.jour {
-    aspect-ratio: 1;
-    min-height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 0.95rem;
-    color: #1C1C1E;
-    position: relative;
-    margin: 2px;
-}
-
-/* jours actuel du mois calendrier mensuel */
-.jour.aujourd-hui {
-    background-color: #8E8E93;
-    color: white;
-    font-weight: 500;
-}
-
-/* jours d'un autre mois calendrier mensuel */
-.jour.autre-mois {
-    color: #8E8E93;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    position: relative;
-    background-color: #ffffff;
-    padding: 60px 20px 20px 20px;
-    border-radius: 20px;
-    width: 95%;
-    max-width: 400px;
-    margin: 20px auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.date-rappel {
-    position: sticky;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
-    color: #8E8E93;
-    background: #ffffff;
-    padding: 5px 15px;
-    border-radius: 4px;
-    z-index: 2;
-    margin-bottom: 15px;
-}
-
-.repas-container {
-    position: relative;
-    z-index: 1;
-}
-
-.repas {
-    margin-top: 10px;
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.repas-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-    padding: 5px 0;
-}
-
-.repas-header h4 {
-    margin: 0;
-    padding: 5px 0;
-    font-size: 14px;
-    line-height: 1.2;
-}
-
-.repas h4 {
-    color: #1c1c1e;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.repas-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-/* conteneur input repas calendrier journalier */
-.input-container {
-    position: relative;
-    margin-top: auto;
-    background-color: #E5E5EA;
-    padding: 0 0;
-    width: 100%;
-}
-
-/* bouton supprimer repas calendrier journalier */
-.delete-repas {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    cursor: pointer;
-    color: #8E8E93;
-    font-size: 20px;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    margin-bottom: 10px;
-}
-
-/* input repas calendrier journalier */
-.repas-input {
-    width: 100%;
-    margin-bottom: 10px;
-    border: none;
-    font-size: 16px;
-    color: #1c1c1e;
-    justify-content: center;
-    text-transform: capitalize;
-    padding: 5px;
-    padding-top: 10px;
-    padding-right: 35px;
-    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    min-height: 36px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    resize: none;
-}
-
-
-
-/* bouton enregistrer repas calendrier journalier */
-.save-button {
-    flex: 1;
-    padding: 8px 12px;
-    background-color: #8E8E93;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    min-height: 36px;
-}
-
-/* bouton ajouter un repas calendrier journalier */
-
-button:not(.retour-button):not(.copy-button):not(.calendrier-header button) {
-    background-color: #8E8E93;
-    color: #ffffff;
-    border: none;
-    width: calc(100% - 12px);
-    min-height: 32px;
-    padding: 12px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-family: 'SF Pro', sans-serif;
-    margin: 5px;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* Styles pour la vue journalière */
-.vue-journaliere {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    z-index: 1;
-    border-radius: 20px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    display: flex;
     flex-direction: column;
-    overflow: hidden;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    padding-bottom: 20px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin-top: 100px;
 }
 
-.vue-journaliere.active {
-    transform: translateX(0);
-}
-
-/* en-tete vue journaliere */
-.vue-journaliere-header {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 100;
-    border-radius: 20px 20px 0 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+/* conteneur header avec boutons */
+header {
+    z-index: 1000;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
-    gap: 12px;
-    justify-content: center;
-}
-
-.vue-journaliere-header h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1c1c1e;
-    margin: 0;
-    border-bottom: 2px solid #8E8E93;
-}
-
-/* conteneur heures */
-.heures-container {
-    scroll-behavior: smooth;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 10px;
-    height: calc(100vh - 300px);
-    max-height: 800px;
-    padding-bottom: 10px;
-    background-color: #ffffff;
-}
-
-/* ligne verticale */
-.timeline {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #E5E5EA;
-    margin-left: 15px;
-}
-
-
-/* rappel de la periode (matin, midi, soir) */
-.periode-slot {
-    margin-bottom: 5px;
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 15px;
-    background: #ffffff;
-    border-bottom: 1px solid #8E8E93;
-    border-left: 1px solid #8E8E93;
-}
-
-.periode-slot:last-child {
-    border-bottom: none;
-}
-
-/* texte rappel de la periode (matin, midi, soir) */
-.periode-label {
-    color: #8E8E93;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-}
-
-/* conteneur repas calendrier journalier */
-.repas-slot {
-
-    border: none;
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to bottom, #f5f5f5 50%, #ffffff 50%);
     padding: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-.time-slot {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    position: relative;
-    min-height: 35px;
-}
-
-.time-label {
-    width: 60px;
-    text-align: right;
-    margin-right: 10px;
-    font-size: 12px;
-    position: relative;
-    top: 0;
-}
-
-.period-label {
-    position: absolute;
-    left: 0;
-    width: 60px;
-    text-align: right;
-    font-size: 12px;
-    color: #8E8E93;
-    margin-right: 10px;
-    top: 70%;
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: #ffffff;
-    padding: 2px 5px;
-}
-
-.heure-slot {
-    position: relative;
-    height: 60px;
-    border-bottom: 1px solid rgba(229, 229, 234, 0.3);
-    padding-left: 50px;
-}
-
-.heure {
-    position: absolute;
-    left: 0;
-    color: #8E8E93;
-    font-size: 14px;
-    font-weight: 600;
-    width: 45px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.contenu-repas {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* nom repas calendrier journalier */
-.nom-repas {
-    font-size: 17px;
-    font-weight: 600;
-    color: #8E8E93;
-    margin-bottom: 2px;
-    margin-top: 6px;
-    margin-left: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
-}
-
-.nom-repas::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, #E5E5EA 0%, transparent 100%);
-}
-
-
-/* fond rappel date */
-#dateDisplay {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1c1c1e;
-    text-align: center;
-    padding: 12px 20px;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    text-transform: capitalize;
-    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-/* Nouveau conteneur pour le bouton */
-.vue-journaliere-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background: transparent;
-    padding: 15px;
-    display: flex;
-    background-color: #ffffff;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Style pour le bouton retour */
-.retour-button {
-    background-color: #8E8E93;
-    color: #ffffff;
-    width: 120px;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 12px;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-
-/* Ajuster la vue mensuelle */
-#vue-mensuelle {
-    width: 100%;
+/* Style des boutons */
+.calendar-button,
+.liste-button {
+    flex: 1;
+    width: 50%;
     height: 100%;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-/* Style spécifique pour le bouton modifier */
-.edit-button {
-    background: none;
-    color: #8E8E93;
     border: none;
-    padding: 8px;
-    font-size: 0.9rem;
-    margin-left: auto;
-}
-
-
-
-/* conteneur repas calendrier journalier */
-.repas-content:not(:has(input)) {
-    background-color: #E5E5EA;
-    padding: 12px 8px 12px 12px;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: #1c1c1e;
-    min-height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    white-space: pre-wrap;
-    word-break: break-word;
-    cursor: text;
-    /* Changé de 'pointer' à 'text' pour indiquer la possibilité d'édition */
-    user-select: text;
-    /* Permet la sélection du texte */
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-}
-
-/* Suppression de toute règle qui pourrait interférer avec l'édition */
-.vue-journaliere .repas-content:not(:has(input)) {
-    pointer-events: auto;
-    cursor: text;
-}
-
-/* Style spécifique pour le bouton modifier - le cacher dans la vue journalière */
-.vue-journaliere .edit-button {
-    display: none;
-}
-
-.close-modal-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 24px;
-    color: #8E8E93;
+    background-color: #f5f5f5;
     cursor: pointer;
-    padding: 5px 10px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    position: relative;
 }
 
+/* changement de couleur quand on est sur une page */
+.calendar-button.active,
+.liste-button.active {
+    background-color: white;
+    color: black;
+}
 
-.collation-item {
+/* arrondi du bouton calendrier */
+.calendar-button.active {
+    border-top-right-radius: 12px;
+}
+
+/* arrondi du bouton liste */
+.liste-button.active {
+    border-top-left-radius: 12px;
+}
+
+/* arrondi du bouton liste quand calendrier est actif */
+header:has(.calendar-button.active) .liste-button {
+    border-bottom-left-radius: 12px;
+}
+
+/* arrondi du bouton calendrier quand liste est actif */
+header:has(.liste-button.active) .calendar-button {
+    border-bottom-right-radius: 12px;
+}
+
+/* conteneur calendrier */
+.calendar-container {
+    width: 100%;
+    height: 80%;
+    background-color: #ffffff;
     display: none;
 }
 
-body.mode-sportif .collation-item {
+.calendar-container.active {
     display: block;
 }
 
-/* indicateur qu'il y a un repas de sauvegarder (visible sur calendrier mensuel)(sous les chiffres) */
-.repas-indicateur {
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-}
-
-/* indicateur qu'il y a un repas de sauvegarder (visible sur calendrier mensuel)(sous les chiffres) */
-
-.repas-indicateur.active {
-    background-color: #8E8E93;
-}
-
-/* indicateur qu'il y a un repas de sauvegarder (visible sur calendrier mensuel)(sous les chiffres) */
-
-.jour.aujourd-hui .repas-indicateur.active {
-    background-color: #ffffff;
-}
-
-/* Conteneur pour les boutons */
-.buttons-container {
-    display: flex;
-    gap: 8px;
+/* conteneur liste */
+.liste-container {
     width: 100%;
-}
-
-/* Style pour le bouton de copie */
-.copy-button {
-    padding: 8px;
+    height: 80%;
     background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    margin-top: 6px;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
-/* icone copier repas calendrier journalier */
-.copy-button svg {
-    width: 18px;
-    height: 18px;
-    color: #8E8E93;
-}
-
-/* icone copier repas calendrier journalier au survol */
-.copy-button:hover {
-    cursor: pointer;
+.liste-container.active {
+    display: block;
 }
 
 /* Responsive pour les petits écrans */
@@ -727,175 +180,5 @@ body.mode-sportif .collation-item {
         -webkit-overflow-scrolling: touch;
     }
 
-    .container,
-    .modal-content,
-    .vue-journaliere {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-    }
 
-    .calendrier-container {
-        flex: 1;
-        margin-bottom: 0;
-    }
-
-    .calendrier-header {
-        padding: 15px;
-    }
-
-    .calendrier-header h2 {
-        font-size: 18px;
-    }
-
-    .jour {
-        font-size: 16px;
-        min-height: 44px;
-    }
-
-    .repas-input {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .vue-journaliere {
-        position: relative !important;
-        transform: none !important;
-        left: auto !important;
-        margin: 0 auto !important;
-        max-width: 400px;
-        overflow: visible;
-        display: block !important;
-    }
-
-    .vue-journaliere-header {
-        padding: env(safe-area-inset-top) 15px 10px;
-        border-radius: 0;
-    }
-
-    #dateDisplay {
-        font-size: 18px;
-        padding: 8px 15px;
-    }
-
-    .heures-container {
-        height: auto;
-        min-height: 400vh;
-        overflow: visible;
-        padding: 0 10px 100px 10px;
-        display: block !important;
-    }
-
-    .heure-slot {
-        height: 50px;
-        padding-left: 45px;
-    }
-
-    .heure {
-        font-size: 12px;
-        width: 40px;
-    }
-
-    .repas-content:not(:has(input)) {
-        padding: 8px;
-        font-size: 14px;
-        min-height: 40px;
-    }
-
-    .vue-journaliere-footer {
-        position: fixed;
-        bottom: 60px;
-        z-index: 1000;
-    }
-
-    .periode-slot {
-        margin-bottom: 6px;
-        padding: 8px;
-    }
-
-    .periode-label {
-        font-size: 11px;
-        margin-bottom: 2px;
-    }
-
-    .nom-repas {
-        font-size: 15px;
-        margin-bottom: 8px;
-    }
-
-    button,
-    .save-button {
-        min-height: 44px;
-    }
-
-    .close-modal-btn {
-        top: max(15px, env(safe-area-inset-top));
-    }
-
-    .container {
-        height: 100vh;
-        margin: 0 auto;
-        max-width: 400px;
-        overflow: visible;
-        display: block !important;
-    }
-
-    .vue-journaliere.active {
-        position: relative !important;
-        transform: none !important;
-        display: block !important;
-    }
-
-    #vue-mensuelle {
-        display: none !important;
-    }
-}
-
-/* Ajustements responsive */
-@media screen and (min-width: 481px) {
-
-    .container,
-    .modal-content,
-    .vue-journaliere {
-        max-width: 400px;
-    }
-}
-
-@media screen and (min-width: 769px) {
-
-    .container,
-    .modal-content,
-    .vue-journaliere {
-        max-width: 400px;
-    }
-}
-
-/* Ajustements pour les très petits écrans */
-@media screen and (max-width: 320px) {
-    .jour {
-        font-size: 14px;
-        min-height: 40px;
-    }
-
-    .calendrier-header h2 {
-        font-size: 16px;
-    }
-}
-
-/* Ajustements pour les écrans en mode paysage */
-@media screen and (max-width: 900px) and (orientation: landscape) {
-    .container {
-        height: auto;
-        min-height: 400px;
-    }
-
-    .heures-container {
-        height: calc(100vh - 150px);
-    }
-
-    .jour {
-        min-height: 35px;
-    }
 }

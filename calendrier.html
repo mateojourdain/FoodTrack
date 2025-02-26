@@ -12,6 +12,7 @@
     <!-- Gardez les liens pour les icônes Material en haut dans le head -->
     <!-- lien pour les icones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="calendrier.js"></script>
 </head>
 
 <body>
@@ -37,100 +38,20 @@
         </div>
     </div>
 
-
-
-
-
-    <!-- Calendrier -->
     <div class="container">
-        <div class="calendrier-container">
-            <!-- Vue mensuelle -->
-            <div class="calendrier" id="vue-mensuelle">
-                <div class="calendrier-header">
-                    <button id="prevMonth">&lt;</button>
-                    <h2 id="monthDisplay"></h2>
-                    <button id="nextMonth">&gt;</button>
-                </div>
-                <div class="jours-semaine">
-                    <div>Lun</div>
-                    <div>Mar</div>
-                    <div>Mer</div>
-                    <div>Jeu</div>
-                    <div>Ven</div>
-                    <div>Sam</div>
-                    <div>Dim</div>
-                </div>
-                <div id="calendrier-jours"></div>
-            </div>
+        <header>
+            <button class="calendar-button">Calendrier</button>
+            <button class="liste-button">Liste</button>
+        </header>
+        <div class="calendar-container">
 
-            <!-- Vue journalière -->
-            <div class="vue-journaliere" id="vue-journaliere" style="display: none;">
-                <div class="vue-journaliere-header">
-                    <h2 id="dateDisplay"></h2>
-                </div>
-                <div class="heures-container">
-                    <!-- Les heures seront générées dynamiquement par JavaScript -->
-                </div>
-                <div class="vue-journaliere-footer">
-                    <button id="retourMois" class="retour-button">Retour</button>
-                </div>
-            </div>
         </div>
-        <!-- vue journaliere -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal-btn">&times;</span>
-                <h3 id="modal-date"></h3>
-                <div class="repas-container">
-                    <div class="repas">
-                        <div class="repas-header">
-                            <h4>Petit-déjeuner</h4>
-                        </div>
-                        <div class="repas-content">
-                            <textarea class="repas-input"></textarea>
-                        </div>
-                    </div>
-                    <div class="repas collation-item">
-                        <div class="repas-header">
-                            <h4>Collation matin</h4>
-                        </div>
-                        <div class="repas-content">
-                            <textarea class="repas-input"></textarea>
-                        </div>
-                    </div>
-                    <div class="repas">
-                        <div class="repas-header">
-                            <h4>Déjeuner</h4>
-                        </div>
-                        <div class="repas-content">
-                            <textarea class="repas-input"></textarea>
-                        </div>
-                    </div>
-                    <div class="repas collation-item">
-                        <div class="repas-header">
-                            <h4>Collation après-midi</h4>
-                        </div>
-                        <div class="repas-content">
-                            <textarea class="repas-input"></textarea>
-                        </div>
-                    </div>
-                    <div class="repas">
-                        <div class="repas-header">
-                            <h4>Dîner</h4>
-                        </div>
-                        <div class="repas-content">
-                            <textarea class="repas-input"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <button id="save-repas">Enregistrer</button>
-                <button id="close-modal">Fermer</button>
-            </div>
+        <div class="liste-container">
+
         </div>
     </div>
 
-    <!-- Garder uniquement le script ici, à la fin du body -->
-    <script src="calendrier.js"></script>
+
 </body>
 
 </html>

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     align-items: center;
     background-color: #f5f5f5;
     overflow: hidden;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* police d'ecriture de Apple */
@@ -25,71 +27,55 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(400px, 90%);
-    height: min(500px, 90vh);
-    padding: clamp(50px, 8vw, 70px);
-    border-radius: 1rem;
-    background: #F2F2F7;
-    box-shadow: 28px 28px 57px #828282,
-        -28px -28px 57px #ffffff;
+    width: 95%;
+    max-width: 400px;
+    min-height: min(500px, 90vh);
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #apple-login-button {
     width: 100%;
     max-width: 300px;
-    padding: clamp(10px, 3vw, 12px);
+    padding: clamp(10px, 2vw, 16px);
     margin: 20px 0;
     border: none;
     text-decoration: none;
-    font-size: clamp(15px, 2.5vw, 17px);
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 500;
     border-radius: 0.75rem;
-    background: #E5E5EA;
-    color: #1C1C1E;
+    background: #8E8E93;
+    color: #ffffff;
     font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    cursor: default;
 }
 
 #apple-login-button:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .apple-login-text {
-    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: clamp(18px, 3vw, 21px);
-    line-height: 1.4;
-    color: #1d1d1f;
     text-align: center;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.5;
+    color: #1C1C1E;
     margin: 0;
     font-weight: 400;
     max-width: 100%;
-}
-
-@media (prefers-color-scheme: dark) {
-    .apple-login-text {
-        color: #f5f5f7;
-    }
-
-    #apple-login-button {
-        background: #1d1d1f;
-        color: #f5f5f7;
-    }
-}
-
-/* Ajout du support pour l'orientation */
-@media screen and (orientation: landscape) and (max-height: 767px) {
-    .apple-login-button-container {
-        padding: 20px;
-    }
-    
-    .apple-login-text {
-        margin: 15px;
-    }
+    letter-spacing: -0.01em;
 }
