@@ -15,6 +15,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
     padding: 20px 0 calc(60px + env(safe-area-inset-bottom)) 0;
 }
 
@@ -176,10 +178,10 @@ header:has(.liste-button.active) .calendar-button {
 /* Responsive pour les petits écrans */
 @media screen and (max-width: 480px) {
     body {
-        overflow-y: auto !important;
-        height: auto !important;
-        -webkit-overflow-scrolling: touch;
+        position: fixed;
+        overflow: hidden !important;
+        height: 100vh !important;
+        width: 100%;
+        touch-action: none;
     }
-
-
 }
